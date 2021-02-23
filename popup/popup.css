@@ -1,0 +1,28 @@
+.container {
+    display: flex;
+    background-color: #f1f1ee;
+    font-family: 'Roboto', sans-serif;
+    font-size: medium;
+}
+
+a {
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    background-color: DodgerBlue;
+    border: none;
+    color: white;
+    padding: 10px 10px;
+    font-size: medium;
+    cursor: pointer;
+    margin: 10px;
+}
+
+button:hover {
+    background-color: RoyalBlue;
+    color: #f1f1ee;
+}

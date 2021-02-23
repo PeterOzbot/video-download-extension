@@ -1,1 +1,1 @@
-# bitchute-extension
+# Chrome extension for downloading videos from Bitchute

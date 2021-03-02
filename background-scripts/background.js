@@ -17,7 +17,7 @@ chrome.runtime.onInstalled.addListener(function () {
 chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
 
   // download video
-  if (msg.text === 'downloadVideo') {
+  if (msg.text === Message_DownloadVideo) {
 
     // download video when URL exists
     const videoData = msg.videoData;
@@ -32,9 +32,9 @@ chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
 
 chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
   // when status is complete then add download action
-  if (changeInfo.status && changeInfo.status == "complete") {
+  if (changeInfo.status && changeInfo.status == TabUpdated_Status) {
     chrome.tabs.sendMessage(tabId, {
-      text: 'addDownloadAction'
+      text: Message_AddDownloadAction
     })
   }  
 });

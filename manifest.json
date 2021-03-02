@@ -10,6 +10,7 @@
     ],
     "background": {
         "scripts": [
+            "common/constants.js",
             "background-scripts/background.js"
         ],
         "persistent": false
@@ -20,9 +21,10 @@
                 "*://www.bitchute.com/*"
             ],
             "js": [
+                "common/constants.js",
                 "content-scripts/content.js",
-                 "lib/jquery.3.5.1.min.js",
-                 "lib/bootstrap.bundle.min.js"
+                "lib/jquery.3.5.1.min.js",
+                "lib/bootstrap.bundle.min.js"
             ],
             "css": [
                 "video-download-action/video-download-action.css",

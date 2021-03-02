@@ -2,24 +2,24 @@
 chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
 
     // try to get video data and return
-    if (msg.text === 'getVideoData') {
+    if (msg.text === Message_GetVideoData) {
 
         // return
         sendResponse(getVideoData());
     }
 
     // download video
-    if (msg.text === 'downloadCurrentVideo') {
+    if (msg.text === Message_DownloadCurrentVideo) {
 
         // get video data
         const videoData = getVideoData();
 
         // trigger download
-        chrome.runtime.sendMessage({ text: 'downloadVideo', videoData });
+        chrome.runtime.sendMessage({ text: Message_DownloadVideo, videoData });
     }
 
     // add download action
-    if (msg.text === 'addDownloadAction') {
+    if (msg.text === Message_AddDownloadAction) {
         tryAddDownloadAction();
     }
 });
@@ -58,7 +58,7 @@ function tryAddDownloadAction() {
                     const videoData = getVideoData();
 
                     // trigger download
-                    chrome.runtime.sendMessage({ text: 'downloadVideo', videoData });
+                    chrome.runtime.sendMessage({ text: Message_DownloadVideo, videoData });
                 });
 
                 //downloadAction.tooltip({container:'body',trigger:'hover'});

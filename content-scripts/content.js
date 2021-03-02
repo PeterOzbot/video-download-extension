@@ -27,11 +27,11 @@ chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
 // parses page to get video info
 function getVideoData() {
     // get source
-    const videoSourceEl = document.querySelector("video source");
+    const videoSourceEl = document.querySelector(VIDEO_SELECTOR);
     const videoSource = videoSourceEl ? videoSourceEl["src"] : '';
 
     // get title
-    const videoTitleEl = document.querySelector('#video-title');
+    const videoTitleEl = document.querySelector(VIDEO_TITLE_SELECTOR);
     const videoTitle = videoTitleEl ? videoTitleEl.innerHTML : '';
 
     // return
@@ -40,7 +40,7 @@ function getVideoData() {
 
 function tryAddDownloadAction() {
     // get actions container
-    const actionListContainer = document.querySelector('.action-list');
+    const actionListContainer = document.querySelector(ACTIONS_SELECTOR);
     if (actionListContainer) {
         fetch(chrome.extension.getURL('/video-download-action/video-download-action.html'))
             .then(response => response.text())
@@ -61,10 +61,8 @@ function tryAddDownloadAction() {
                     chrome.runtime.sendMessage({ text: Message_DownloadVideo, videoData });
                 });
 
-                //downloadAction.tooltip({container:'body',trigger:'hover'});
+                // add tooltip
                 $('#videoDownloadAction').tooltip({ container: 'body', trigger: 'hover' });
-
-
             }).catch(err => {
                 console.log(err);
             });

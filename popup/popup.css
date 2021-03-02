@@ -2,28 +2,29 @@
     display: flex;
     background-color: #f1f1ee;
     font-family: 'Roboto', sans-serif;
-    font-size: medium;
+    font-size: large;
+    font-weight: bold;
 }
 
-a {
+span {
     margin: 10px;
     display: flex;
     justify-content: center;
     align-items: center; 
     white-space: nowrap;
+    color: #4d4b4e;
+    cursor: pointer;
 }
 
 button {
-    background-color: DodgerBlue;
+    background-color: #ddd;
     border: none;
-    color: white;
+    color: #4d4b4e;
     padding: 10px 10px;
-    font-size: medium;
     cursor: pointer;
     margin: 10px;
 }
 
 button:hover {
-    background-color: RoyalBlue;
-    color: #f1f1ee;
+    color: #ef4136;
 }

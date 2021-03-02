@@ -5,6 +5,7 @@
     "permissions": [
         "downloads",
         "activeTab",
+        "tabs",
         "declarativeContent"
     ],
     "background": {
@@ -16,12 +17,22 @@
     "content_scripts": [
         {
             "matches": [
-                "*://*/*"
+                "*://www.bitchute.com/*"
             ],
             "js": [
-                "content-scripts/content.js"
+                "content-scripts/content.js",
+                 "lib/jquery.3.5.1.min.js",
+                 "lib/bootstrap.bundle.min.js"
+            ],
+            "css": [
+                "video-download-action/video-download-action.css",
+                "lib/bootstrap.min.css"
             ]
         }
+    ],
+    "web_accessible_resources": [
+        "video-download-action/video-download-action.html",
+        "webfonts/fa-solid-900.woff2"
     ],
     "page_action": {
         "default_popup": "popup/popup.html",

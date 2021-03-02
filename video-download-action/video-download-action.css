@@ -1,0 +1,16 @@
+#videoDownloadAction i {
+    font-family: 'Custom Font Awesome Action';
+    font-weight: 900; 
+    font-style: normal;
+}
+#videoDownloadAction i:before {
+    content: "\f019";
+}
+
+@font-face {
+    font-family: 'Custom Font Awesome Action';
+    font-style: normal;
+    font-weight: 900;
+    font-display: block;
+    src: url("chrome-extension://__MSG_@@extension_id__/webfonts/fa-solid-900.woff2") format("woff2")
+ }

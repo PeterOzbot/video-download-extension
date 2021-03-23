@@ -1,6 +1,13 @@
-const WEB_PAGE = "www.bitchute.com";
-const WEB_PAGE_PATH ="video";
+const YOUTUBE = {
+    WEB_PAGE: "www.youtube.com",
+    WEB_PAGE_PATH: "watch",
+    ACTIONS_SELECTOR: "#top-level-buttons:first-child"
+};
 
-const ACTIONS_SELECTOR = ".action-list";
-const VIDEO_TITLE_SELECTOR = "#video-title";
-const VIDEO_SELECTOR = "video source";
+const BITCHUTE = {
+    WEB_PAGE: "www.bitchute.com",
+    WEB_PAGE_PATH: "video",
+    ACTIONS_SELECTOR: ".action-list",
+    VIDEO_TITLE_SELECTOR: "#video-title",
+    VIDEO_SELECTOR: "video source",
+};

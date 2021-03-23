@@ -5,7 +5,10 @@ chrome.runtime.onInstalled.addListener(function () {
     // only work on specific page
     chrome.declarativeContent.onPageChanged.addRules([{
       conditions: [new chrome.declarativeContent.PageStateMatcher({
-        pageUrl: { hostEquals: WEB_PAGE, pathContains: WEB_PAGE_PATH },
+        pageUrl: { hostEquals: BITCHUTE.WEB_PAGE, pathContains: BITCHUTE.WEB_PAGE_PATH }
+      }),
+      new chrome.declarativeContent.PageStateMatcher({
+        pageUrl: { hostEquals: YOUTUBE.WEB_PAGE, pathContains: YOUTUBE.WEB_PAGE_PATH }
       })],
       actions: [new chrome.declarativeContent.ShowPageAction()]
     }]);
@@ -17,7 +20,7 @@ chrome.runtime.onInstalled.addListener(function () {
 chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
 
   // download video
-  if (msg.text === Message_DownloadVideo) {
+  if (msg.text === Messages.DownloadVideo) {
 
     // download video when URL exists
     const videoData = msg.videoData;
@@ -34,7 +37,7 @@ chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
   // when status is complete then add download action
   if (changeInfo.status && changeInfo.status == TabUpdated_Status) {
     chrome.tabs.sendMessage(tabId, {
-      text: Message_AddDownloadAction
+      text: Messages.AddDownloadAction
     })
-  }  
+  }
 });

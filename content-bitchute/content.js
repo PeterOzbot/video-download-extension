@@ -2,24 +2,24 @@
 chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
 
     // try to get video data and return
-    if (msg.text === Message_GetVideoData) {
+    if (msg.text === Messages.GetVideoData) {
 
         // return
         sendResponse(getVideoData());
     }
 
     // download video
-    if (msg.text === Message_DownloadCurrentVideo) {
+    if (msg.text === Messages.DownloadCurrentVideo) {
 
         // get video data
         const videoData = getVideoData();
 
         // trigger download
-        chrome.runtime.sendMessage({ text: Message_DownloadVideo, videoData });
+        chrome.runtime.sendMessage({ text: Messages.DownloadVideo, videoData });
     }
 
     // add download action
-    if (msg.text === Message_AddDownloadAction) {
+    if (msg.text === Messages.AddDownloadAction) {
         tryAddDownloadAction();
     }
 });
@@ -27,11 +27,11 @@ chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
 // parses page to get video info
 function getVideoData() {
     // get source
-    const videoSourceEl = document.querySelector(VIDEO_SELECTOR);
+    const videoSourceEl = document.querySelector(BITCHUTE.VIDEO_SELECTOR);
     const videoSource = videoSourceEl ? videoSourceEl["src"] : '';
 
     // get title
-    const videoTitleEl = document.querySelector(VIDEO_TITLE_SELECTOR);
+    const videoTitleEl = document.querySelector(BITCHUTE.VIDEO_TITLE_SELECTOR);
     const videoTitle = videoTitleEl ? videoTitleEl.innerHTML : '';
 
     // return
@@ -40,9 +40,9 @@ function getVideoData() {
 
 function tryAddDownloadAction() {
     // get actions container
-    const actionListContainer = document.querySelector(ACTIONS_SELECTOR);
+    const actionListContainer = document.querySelector(BITCHUTE.ACTIONS_SELECTOR);
     if (actionListContainer) {
-        fetch(chrome.extension.getURL('/video-download-action/video-download-action.html'))
+        fetch(chrome.extension.getURL('/content-bitchute/video-download-action/video-download-action.html'))
             .then(response => response.text())
             .then(data => {
                 // create action
@@ -58,7 +58,7 @@ function tryAddDownloadAction() {
                     const videoData = getVideoData();
 
                     // trigger download
-                    chrome.runtime.sendMessage({ text: Message_DownloadVideo, videoData });
+                    chrome.runtime.sendMessage({ text: Messages.DownloadVideo, videoData });
                 });
 
                 // add tooltip

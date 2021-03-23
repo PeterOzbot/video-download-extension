@@ -1,7 +1,7 @@
 {
-    "name": "Bitchute download",
-    "version": "1.0",
-    "description": "Chrome extension for downloading videos from Bitchute.",
+    "name": "Video download",
+    "version": "1.0.0.0",
+    "description": "Chrome extension for downloading videos from Bitchute/(YouTube)*/(Streamanity)*",
     "permissions": [
         "downloads",
         "activeTab",
@@ -19,23 +19,44 @@
     "content_scripts": [
         {
             "matches": [
-                "*://www.bitchute.com/*"
+                "*://*/*"
             ],
             "js": [
                 "common/configuration.js",
                 "common/constants.js",
-                "content-scripts/content.js",
                 "lib/jquery.3.5.1.min.js",
                 "lib/bootstrap.bundle.min.js"
             ],
             "css": [
-                "video-download-action/video-download-action.css",
                 "lib/bootstrap.min.css"
+            ]
+        },
+        {
+            "matches": [
+                "*://www.bitchute.com/video/*"
+            ],
+            "js": [
+                "content-bitchute/content.js"
+            ],
+            "css": [
+                "content-bitchute/video-download-action/video-download-action.css"
+            ]
+        },
+        {
+            "matches": [
+                "*://www.youtube.com/watch*"
+            ],
+            "js": [
+                "content-youtube/content.js"
+            ],
+            "css": [
+                "content-youtube/video-download-action/video-download-action.css"
             ]
         }
     ],
     "web_accessible_resources": [
-        "video-download-action/video-download-action.html",
+        "content-bitchute/video-download-action/video-download-action.html",
+        "content-youtube/video-download-action/video-download-action.html",
         "webfonts/fa-solid-900.woff2"
     ],
     "page_action": {

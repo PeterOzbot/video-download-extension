@@ -30,7 +30,7 @@ function tryAddDownloadAction() {
 
                 // add tooltip
                 $('#videoDownloadAction').tooltip({ container: 'body', trigger: 'hover' });
-            }).catch(err => {
+            }).catch(err => { 
                 console.log(err);
             });
     }

@@ -33,7 +33,7 @@
         },
         {
             "matches": [
-                "*://www.bitchute.com/video/*"
+                "*://www.bitchute.com/*"
             ],
             "js": [
                 "content-bitchute/content.js"

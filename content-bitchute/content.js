@@ -39,6 +39,7 @@ function getVideoData() {
 }
 
 function tryAddDownloadAction() {
+    debugger;
     // get actions container
     const actionListContainer = document.querySelector(BITCHUTE.ACTIONS_SELECTOR);
     if (actionListContainer) {

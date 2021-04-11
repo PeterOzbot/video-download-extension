@@ -19,7 +19,8 @@
     "content_scripts": [
         {
             "matches": [
-                "*://*/*"
+                "*://www.bitchute.com/*",
+                "*://www.youtube.com/watch*"
             ],
             "js": [
                 "common/configuration.js",

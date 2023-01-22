@@ -1,16 +1,8 @@
-#videoDownloadAction {
-    margin-right: 20px;
-    margin-left: 20px;
-    margin-top: 5px;
-    cursor: pointer;
-}
-
 #videoDownloadAction i {
     font-family: 'Custom Font Awesome Action';
-    font-size: 20px;
     font-weight: 900;
     font-style: normal;
-    color: #909090;
+    margin-right: 5px;
 }
 
 #videoDownloadAction i:before {

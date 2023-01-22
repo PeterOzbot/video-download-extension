@@ -27,11 +27,11 @@ chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
 // parses page to get video info
 function getVideoData() {
     // get source
-    const videoSourceEl = document.querySelector(BITCHUTE.VIDEO_SELECTOR);
+    const videoSourceEl = document.querySelector(RUMBLE.VIDEO_SELECTOR);
     const videoSource = videoSourceEl ? videoSourceEl["src"] : '';
 
     // get title
-    const videoTitleEl = document.querySelector(BITCHUTE.VIDEO_TITLE_SELECTOR);
+    const videoTitleEl = document.querySelector(RUMBLE.VIDEO_TITLE_SELECTOR);
     const videoTitle = videoTitleEl ? videoTitleEl.innerHTML : '';
 
     // return
@@ -39,10 +39,11 @@ function getVideoData() {
 }
 
 function tryAddDownloadAction() {
+    debugger;
     // get actions container
-    const actionListContainer = document.querySelector(BITCHUTE.ACTIONS_SELECTOR);
+    const actionListContainer = document.querySelector(RUMBLE.ACTIONS_SELECTOR);
     if (actionListContainer) {
-        fetch(chrome.extension.getURL('/content-bitchute/video-download-action/video-download-action.html'))
+        fetch(chrome.extension.getURL('/content-rumble/video-download-action/video-download-action.html'))
             .then(response => response.text())
             .then(data => {
                 // create action

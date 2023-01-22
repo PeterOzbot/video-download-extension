@@ -8,7 +8,7 @@ chrome.runtime.onInstalled.addListener(function () {
         pageUrl: { hostEquals: BITCHUTE.WEB_PAGE, pathContains: BITCHUTE.WEB_PAGE_PATH }
       }),
       new chrome.declarativeContent.PageStateMatcher({
-        pageUrl: { hostEquals: YOUTUBE.WEB_PAGE, pathContains: YOUTUBE.WEB_PAGE_PATH }
+        pageUrl: { hostEquals: RUMBLE.WEB_PAGE, pathContains: "" }
       })],
       actions: [new chrome.declarativeContent.ShowPageAction()]
     }]);

@@ -1,7 +1,9 @@
-const YOUTUBE = {
-    WEB_PAGE: "www.youtube.com",
-    WEB_PAGE_PATH: "watch",
-    ACTIONS_SELECTOR: "#top-level-buttons:first-child"
+const RUMBLE = {
+    WEB_PAGE: "rumble.com",
+    WEB_PAGE_PATH: "",
+    ACTIONS_SELECTOR: ".media-engage",
+    VIDEO_SELECTOR: ".videoPlayer-Rumble-cls > video",
+    VIDEO_TITLE_SELECTOR: "h1"
 };
 
 const BITCHUTE = {

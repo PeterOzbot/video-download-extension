@@ -1,7 +1,7 @@
 {
     "name": "Video download",
     "version": "1.0.0.0",
-    "description": "Chrome extension for downloading videos from Bitchute/(YouTube)*/(Streamanity)*",
+    "description": "Chrome extension for downloading videos from Bitchute/Rumble",
     "permissions": [
         "downloads",
         "activeTab",
@@ -20,7 +20,7 @@
         {
             "matches": [
                 "*://www.bitchute.com/*",
-                "*://www.youtube.com/watch*"
+                "*://rumble.com/*"
             ],
             "js": [
                 "common/configuration.js",
@@ -45,19 +45,19 @@
         },
         {
             "matches": [
-                "*://www.youtube.com/watch*"
+                "*://rumble.com/*"
             ],
             "js": [
-                "content-youtube/content.js"
+                "content-rumble/content.js"
             ],
             "css": [
-                "content-youtube/video-download-action/video-download-action.css"
+                "content-rumble/video-download-action/video-download-action.css"
             ]
         }
     ],
     "web_accessible_resources": [
         "content-bitchute/video-download-action/video-download-action.html",
-        "content-youtube/video-download-action/video-download-action.html",
+        "content-rumble/video-download-action/video-download-action.html",
         "webfonts/fa-solid-900.woff2"
     ],
     "page_action": {

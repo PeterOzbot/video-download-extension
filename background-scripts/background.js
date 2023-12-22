@@ -27,7 +27,7 @@ chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
     if (videoData.url && videoData.title) {
       chrome.downloads.download({
         url: videoData.url,
-        filename: videoData.title.replace(/[^a-zA-Z ]+/g, '').trim() + '.mp4'
+        filename: videoData.title.replace(/[^a-zA-Z 0-9]+/g, '').trim() + '.mp4'
       });
     }
   }

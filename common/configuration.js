@@ -1,8 +1,8 @@
 const RUMBLE = {
     WEB_PAGE: "rumble.com",
     WEB_PAGE_PATH: "",
-    ACTIONS_SELECTOR: ".media-engage",
-    VIDEO_SELECTOR: ".videoPlayer-Rumble-cls > video",
+    ACTIONS_SELECTOR: ".media-by-actions-container",
+    VIDEO_SELECTOR: ".videoPlayer-Rumble-cls video",
     VIDEO_TITLE_SELECTOR: "h1"
 };
 
